@@ -3,10 +3,10 @@ use Mix.Config
 # Configure your database
 config :feria, Feria.Repo,
   username: "postgres",
-  password: "postgres",
+  password: "",
   database: "feria_dev",
   hostname: "localhost",
-  show_sensitive_data_on_connection_error: true,
+  show_sensitive_data_on_connection_error: false,
   pool_size: 10
 
 # For development, we disable any cache and enable
@@ -26,7 +26,8 @@ config :feria, FeriaWeb.Endpoint,
       "--mode",
       "development",
       "--watch-stdin",
-      cd: Path.expand("../assets", __DIR__)
+      "--colors",
+      cd: Path.expand("../", __DIR__)
     ]
   ]
 
