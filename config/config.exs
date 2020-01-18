@@ -13,7 +13,7 @@ config :feria,
 # Configures the endpoint
 config :feria, FeriaWeb.Endpoint,
   url: [host: "localhost"],
-  secret_key_base: "Tpg76SCqv3cJdhXD7dFTSG+/STMXyDj/ibksIP17NIbzu11uwJ2tTUZ5n74MCyJd",
+  secret_key_base: System.get_env("SECRET_KEY_BASE"),
   render_errors: [view: FeriaWeb.ErrorView, accepts: ~w(html json)],
   pubsub: [name: Feria.PubSub, adapter: Phoenix.PubSub.PG2]
 
